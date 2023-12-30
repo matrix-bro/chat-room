@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block title %} {% endblock %} | Chat Room</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#93BFCF]">
+    <nav class="flex items-center justify-between px-4 py-6 bg-[#6096B4]">
+        <div>
+            <a href="#" class="text-xl text-white font-semibold">Chat Room</a>
+        </div>
+        <div class="flex items-center space-x-4">
+            <a href="#" class="py-2 px-4 bg-blue-300 hover:bg-blue-200 text-lg rounded-md">Login</a>
+            <a href="#" class="py-2 px-4 bg-teal-300 hover:bg-teal-200 text-lg rounded-md">Sign Up</a>
+        </div>
+    </nav>
+
+    <div class="px-6 py-6">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
