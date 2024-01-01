@@ -1,5 +1,8 @@
 from django.shortcuts import render, redirect
 from app.forms import SignUpForm
+from django.contrib.auth.decorators import login_required
+
+from app.models import Room
 
 def index(request):
     return render(request, 'app/index.html')
@@ -19,3 +22,8 @@ def signup(request):
     return render(request, 'app/signup.html', {
         'form': form,
     })
+
+@login_required
+def rooms(request):
+    rooms = Room.objects.all()
+    return render(request, 'app/rooms.html', {"rooms": rooms})

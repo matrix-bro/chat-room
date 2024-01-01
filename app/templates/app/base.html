@@ -13,7 +13,7 @@
         </div>
         <div class="flex items-center space-x-4">
             {% if request.user.is_authenticated %}
-                <a href="#" class="py-2 px-4 bg-green-300 hover:bg-green-200 text-lg rounded-md">Rooms</a>
+                <a href="{% url 'rooms-page' %}" class="py-2 px-4 bg-green-300 hover:bg-green-200 text-lg rounded-md">Rooms</a>
                 <a href="{% url 'logout' %}" class="py-2 px-4 bg-red-300 hover:bg-red-200 text-lg rounded-md">Logout</a>
             {% else %}
                 <a href="{% url 'login-page' %}" class="py-2 px-4 bg-blue-300 hover:bg-blue-200 text-lg rounded-md">Login</a>
