@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from app.forms import SignUpForm
 from django.contrib.auth.decorators import login_required
 
-from app.models import Room
+from app.models import Message, Room
 
 def index(request):
     return render(request, 'app/index.html')
@@ -32,4 +32,9 @@ def rooms(request):
 @login_required
 def room(request, slug):
     room = Room.objects.get(slug=slug)
-    return render(request, 'app/room.html', {"room": room})
+    messages = Message.objects.filter(room=room)[:20]
+    
+    return render(request, 'app/room.html', {
+        "room": room,
+        "messages": messages
+    })
