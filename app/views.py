@@ -13,8 +13,8 @@ def signup(request):
 
         if form.is_valid():
             form.save()
-
-            return redirect('index-page')
+            
+            return redirect('login-page')
         
     else:
         form = SignUpForm()
