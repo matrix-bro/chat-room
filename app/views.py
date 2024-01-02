@@ -32,9 +32,10 @@ def rooms(request):
 @login_required
 def room(request, slug):
     room = Room.objects.get(slug=slug)
-    messages = Message.objects.filter(room=room)[:20]
-    
+    last_20_messages = Message.objects.filter(room=room).order_by('-date_added')[0:20]
+    last_20_messages_in_ascending_order = reversed(last_20_messages)
+
     return render(request, 'app/room.html', {
         "room": room,
-        "messages": messages
+        "messages": last_20_messages_in_ascending_order
     })
