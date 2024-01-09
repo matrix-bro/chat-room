@@ -1,0 +1,35 @@
+[
+{
+  "model": "app.room",
+  "pk": 1,
+  "fields": {
+    "name": "Work",
+    "slug": "work"
+  }
+},
+{
+  "model": "app.room",
+  "pk": 2,
+  "fields": {
+    "name": "Gaming",
+    "slug": "gaming"
+  }
+},
+{
+  "model": "app.room",
+  "pk": 3,
+  "fields": {
+    "name": "Travel",
+    "slug": "travel"
+  }
+}
+,
+{
+  "model": "app.room",
+  "pk": 4,
+  "fields": {
+    "name": "Study",
+    "slug": "study"
+  }
+}
+]
